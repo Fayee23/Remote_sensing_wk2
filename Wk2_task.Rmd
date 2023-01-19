@@ -33,7 +33,7 @@ style_mono_accent(
 
 General description
 
-Category
+Technology
 
 ---
 ```{r echo=FALSE}
@@ -69,8 +69,32 @@ knitr::include_graphics('img/Lidar.jpg')
 ]
 
 ---
+# Technology
 
 
+
+---
+class: inverse, center, middle
+# Application
+Category
+Example
+
+---
+# Category
+
+
+---
+# Example
+
+
+
+---
+class: inverse, center, middle
+# Reflection
+
+
+---
+# 
 
 
 
