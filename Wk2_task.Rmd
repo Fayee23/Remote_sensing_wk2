@@ -52,7 +52,7 @@ myBib <- ReadBib("./Library.bib", check = FALSE)
 **LiDAR**: an acronym of "**L**aser **I**maging, **D**etection, **A**nd **R**anging"
 
 .pull-left[
-* A method for determining ranges by targeting an object or a surface with a laser and measuring the time for the reflected light to return to the receiver. 
+* A method for determining ranges by targeting an object or a surface with a laser and measuring the time for the reflected light to return to the receiver `r Citep(myBib, "shan2018")`. 
 
 * Use ultraviolet, visible, or near infrared light
 
@@ -76,6 +76,7 @@ knitr::include_graphics('img/Lidar.jpg')
 
 ---
 # Reference
+
 ```{r results='asis', echo=FALSE}
 PrintBibliography(myBib, start = 1, end = 7)
 ```
