@@ -1,0 +1,49 @@
+---
+title: "Week 2 task"
+subtitle: "The application of LIDAR"
+author: "Yifei Lin"
+institute: "CASA, UCL"
+date: "2023/01/18 (updated: `r Sys.Date()`)"
+output:
+  xaringan::moon_reader:
+    css: xaringan-themer.css
+    #lib_dir: libs
+    #style_mono_light(base_color = "#23395b")
+    #css: [default, metropolis, metropolis-fonts]
+    nature:
+      highlightStyle: github # how the code displays
+      highlightLines: true
+      countIncrementalSlides: false
+      #ratio "4:3" 
+---
+```{r xaringan-themer, include=FALSE, warning=FALSE}
+library(xaringanthemer)
+style_mono_accent(
+  base_color = "#1c5253",
+  #header_font_google = google_font("Josefin Sans"),
+  #text_font_google   = google_font("Montserrat", "300", "300i"),
+  #code_font_google   = google_font("Fira Mono")
+)
+```
+
+class: inverse, center, middle
+# Summary
+
+Active Sensor
+
+---
+# LIDAR
+**L**aser **I**maging, **D**etection, **A**nd **R**anging
+
+.pull-left[
+* A method for determining ranges by targeting an object or a surface with a laser and measuring the time for the reflected light to return to the receiver. ]
+
+.pull-right[
+```{r echo=FALSE, out.width='70%', fig.align='center'}
+knitr::include_graphics('img/Lidar.jpg')
+```
+
+.small[Leica terrestrial lidar scanner (TLS) Source: [David Monniaux](https://en.wikipedia.org/wiki/File:Lidar_P1270901.jpg)]
+]
+
+
