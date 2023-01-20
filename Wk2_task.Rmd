@@ -48,8 +48,8 @@ BibOptions(check.entries = FALSE,
 myBib <- ReadBib("./Library.bib", check = FALSE)
 ```
 
-# General description 
-**LiDAR**: an acronym of "**L**aser **I**maging, **D**etection, **A**nd **R**anging"
+## General description 
+**LiDAR**: an acronym of "**Li**ght **D**etection, **A**nd **R**anging"
 
 .pull-left[
 * A method for determining ranges by targeting an object or a surface with a laser and measuring the time for the reflected light to return to the receiver `r Citep(myBib, "shan2018")`. 
@@ -69,25 +69,83 @@ knitr::include_graphics('img/Lidar.jpg')
 ]
 
 ---
-# Technology
+## Technology
+.pull-left[
+### Mathematical formula
+$$distance= \frac{c*t}{2}$$
 
+.small[c: speed of light; 
 
+t: the time spent for the laser light to travel and travel back between the object and the detector.]
+]
 
+.pull-right[
+
+```{r echo=FALSE, out.width='60%', fig.align='center'}
+knitr::include_graphics('img/Time_of_flight.png')
+```
+
+.small[Basic time-of-flight principles applied to laser range-finding. Source: [RCraig09](https://en.wikipedia.org/wiki/File:20200501_Time_of_flight.svg)]
+]
+
+###  Two kinds of lidar detection schemes
+
+* **direct energy detection**: principally measures amplitude changes of the reflected light, more simple
+* **coherent detection**: best for measuring Doppler shifts, or changes in the phase of the reflected light, more sensitive
 ---
 class: inverse, center, middle
 # Application
+
 Category
+
 Example
 
 ---
-# Category
+## Category
 
+* **Airborne**
+
+  * Creates a 3-D point cloud model of landscape when attached to an aircraft during flight
+  * Most detailed and accurate method, can filter out reflections of vegetation from the point cloud model
+  
+* **Terrestrial**
+
+  * Happen on the Earth's surface and can be either stationary or mobile
+.pull-left[
+```{r echo=FALSE, out.width='80%', fig.align='center'}
+knitr::include_graphics('img/Airborne_Lidar_Bathymetric.jpg')
+```
+.small[Airborne: High-resolution multibeam lidar map. Source: [NOAA Ocean Exploration & Research](https://www.flickr.com/photos/oceanexplorergov/9267768683/)]
+]
+.pull-right[
+```{r echo=FALSE, out.width='75%', fig.align='center'}
+knitr::include_graphics('img/LIDAR_equipped_mobile_robot.jpg')
+```
+.small[Terrestrial: LIDAR equipped mobile robot. Source: [S. Winkvist](https://en.wikipedia.org/wiki/File:LIDAR_equipped_mobile_robot.jpg)]
+
+]
 
 ---
-# Example
+## Example of Airborne LiDAR applications
 
-
-
+* Urban morphology and green analysis
+  * `r Citet(myBib, "yu2010")` applied airborne LiDAR technology on building density information.
+  * `r Citet(myBib, "hecht2008")` estimated the urban green volume using single pulse LiDAR-derived nDSM.
+  
+* Urban flood risk modeling
+  * `r Citet(myBib,"tsubaki2010")` generated unstructured grid representing the urban landscape and estimated the water depth by flood simulations.
+.pull-left[
+```{r echo=FALSE, out.width='88%', fig.align='center'}
+knitr::include_graphics('img/building_density.png')
+```
+.small[Extracted building objects and its coverage ratio map for Houston. Source: `r Citet(myBib, "yu2010")`]
+]
+.pull-right[
+```{r echo=FALSE, out.width='90%', fig.align='center'}
+knitr::include_graphics('img/flood_model.png')
+```
+.small[Digital surface model and elevation model. Source: `r Citet(myBib,"tsubaki2010")`]
+]
 ---
 class: inverse, center, middle
 # Reflection
