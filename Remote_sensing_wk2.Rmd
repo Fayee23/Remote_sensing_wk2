@@ -150,9 +150,8 @@ knitr::include_graphics('img/flood_model.png')
 class: inverse, center, middle
 # Reflection
 
-
 ---
-# 
+## Reflection
 
 
 
