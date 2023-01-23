@@ -149,8 +149,14 @@ class: inverse, center, middle
 ---
 ## Reflection
 
+### LiDAR's Role on planning
+* Extraction building information, such as density, heights, volumes, boundary, coverage ratio, and floor area ratio, can be used to **estimate population**, which is helpful for strategy planning, urban design and policy analysis.
+* Assessment of potential flood can be applied in **infrastructure planning** and the construction of **spong city**.
+* Estimation of urban green volume provides information for **ecologically orientated** city planning and environmentally sustainable development.
 
-
+### Future investigation
+* Fine-scale land use information derived
+* Air ventilation assessment (AVA) of urban environment *(especially in high rise built-up urban area)*
 ---
 # Reference
 ```{r results='asis', echo=FALSE}
