@@ -27,15 +27,7 @@ style_mono_accent(
 
 #style_mono_light(base_color = "#23395b")
 ```
-# Summary
 
-General description
-
-Technology
-
----
-## General description 
-**LiDAR**: an acronym of "**Li**ght **D**etection, **A**nd **R**anging"
 ```{r echo=FALSE}
 library(RefManageR)
 BibOptions(check.entries = FALSE,
@@ -47,6 +39,15 @@ BibOptions(check.entries = FALSE,
            no.print.fields=c("doi", "url", "urldate", "issn"))
 myBib <- ReadBib("./Library.bib", check = FALSE)
 ```
+# Summary
+
+General description
+
+Technology
+
+---
+## General description 
+**LiDAR**: an acronym of "**Li**ght **D**etection, **A**nd **R**anging"
 .pull-left[
 * A method for determining ranges by targeting an object or a surface with a laser and measuring the time for the reflected light to return to the receiver `r Citep(myBib, "shan2018")`. 
 
