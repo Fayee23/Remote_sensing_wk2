@@ -2,7 +2,7 @@
 title: "Week 2 task"
 subtitle: "The application of LIDAR"
 author: "Yifei Lin"
-institute: "CASA, UCL"
+institute: "Centre for Advanced Spatial Analysis, UCL"
 date: "2023/01/18 (updated: `r Sys.Date()`)"
 output:
   xaringan::moon_reader:
@@ -147,6 +147,9 @@ knitr::include_graphics('img/flood_model.png')
 class: inverse, center, middle
 # Reflection
 
+LiDAR's Role on planning
+
+Future investigation
 ---
 ## Reflection
 
