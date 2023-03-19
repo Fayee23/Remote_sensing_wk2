@@ -28,7 +28,7 @@ style_mono_accent(
 #style_mono_light(base_color = "#23395b")
 ```
 
-```{r echo=FALSE}
+```{r echo=FALSE, warning=FALSE}
 library(RefManageR)
 BibOptions(check.entries = FALSE,
            bib.style = "authoryear",
@@ -125,24 +125,79 @@ knitr::include_graphics('img/LIDAR_equipped_mobile_robot.jpg')
 ---
 ## Example of Airborne LiDAR applications
 
-* Urban morphology and green analysis
-  * `r Citet(myBib, "yu2010")` applied airborne LiDAR technology on building density information.
-  * `r Citet(myBib, "hecht2008")` estimated the urban green volume using single pulse LiDAR-derived nDSM.
-  
-* Urban flood risk modeling
-  * `r Citet(myBib,"tsubaki2010")` generated unstructured grid representing the urban landscape and estimated the water depth by flood simulations.
+```{r echo=FALSE, out.width='100%', warning=FALSE}
+xaringanExtra::use_panelset()
+
+```
+
+.panelset[
+
+.panel[.panel-name[Urban morphology]
+
+`r Citet(myBib, "yu2010")` found an approach to derive Building Coverage Ratio (BCR), Floor Area Ratio (FAR), and other building density indicators numerically and automatically from high-resolution airborne LiDAR data at different spatial scales.
+
 .pull-left[
-```{r echo=FALSE, out.width='88%', fig.align='center'}
+* **Method**
+```{r echo=FALSE, out.width='80%', fig.align='center'}
+knitr::include_graphics('img/building_workflow.png')
+```
+.small[Workflow for automated building density estimation. Source: `r Citet(myBib, "yu2010")`]
+]
+
+.pull-right[
+* **Result**
+```{r echo=FALSE, out.width='110%', fig.align='center'}
 knitr::include_graphics('img/building_density.png')
 ```
 .small[Extracted building objects and its coverage ratio map for Houston. Source: `r Citet(myBib, "yu2010")`]
 ]
+]
+
+
+.panel[.panel-name[Urban green analysis]
+
+.pull-left[
+`r Citet(myBib, "hecht2008")` estimated the urban green volume using single pulse LiDAR-derived nDSM.
+
+* **Result**
+```{r echo=FALSE, out.width='72%', fig.align='left'}
+knitr::include_graphics('img/green_result.png')
+```
+.small[Result of urban green volume. Source: `r Citet(myBib, "hecht2008")`]
+]
+
 .pull-right[
-```{r echo=FALSE, out.width='90%', fig.align='center'}
+
+* **Method**
+```{r echo=FALSE, out.width='75%', fig.align='left'}
+knitr::include_graphics('img/green_workflow.png')
+```
+.small[Workflow. Source: `r Citet(myBib, "hecht2008")`]
+]
+]
+
+.panel[.panel-name[Urban flood risk modeling]
+
+.pull-left[
+`r Citet(myBib,"tsubaki2010")` generated unstructured grid representing the urban landscape and estimated the water depth by flood simulations.
+* **Result**
+```{r echo=FALSE, out.width='100%', fig.align='left'}
 knitr::include_graphics('img/flood_model.png')
 ```
 .small[Digital surface model and elevation model. Source: `r Citet(myBib,"tsubaki2010")`]
 ]
+
+.pull-right[
+* **Method**
+```{r echo=FALSE, out.width='90%', fig.align='left'}
+knitr::include_graphics('img/flood_workflow.png')
+```
+.small[Workflow. Source: `r Citet(myBib,"tsubaki2010")`]
+]
+
+]
+]
+
 ---
 class: inverse, center, middle
 # Reflection
@@ -154,15 +209,15 @@ Future investigation
 ## Reflection
 
 ### LiDAR's Role on planning
-* Extraction building information, such as density, heights, volumes, boundary, coverage ratio, and floor area ratio, can be used to **estimate population**, which is helpful for strategy planning, urban design and policy analysis.
-* Assessment of potential flood can be applied in **infrastructure planning** and the construction of **spong city**.
-* Estimation of urban green volume provides information for **ecologically orientated** city planning and environmentally sustainable development.
+* **Extraction building information**, such as density, heights, volumes, boundary, coverage ratio, and floor area ratio, can be used to **estimate population**, which is helpful for strategy planning, urban design and policy analysis.
+* **Assessment of potential flood** can be applied in **infrastructure planning** and the construction of **spong city**.
+* **Estimation of urban green volume** provides information for **ecologically orientated** city planning and environmentally sustainable development.
 
 ### Future investigation
 * Fine-scale land use information derived
 * Air ventilation assessment (AVA) of urban environment *(especially in high rise built-up urban area)*
 ---
 # Reference
-```{r results='asis', echo=FALSE}
-PrintBibliography(myBib, start = 1, end = 5)
+```{r results='asis', echo=FALSE, warning=FALSE}
+PrintBibliography(myBib, start = 1, end = 7)
 ```

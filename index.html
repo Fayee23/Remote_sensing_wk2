@@ -5,6 +5,8 @@
     <meta charset="utf-8" />
     <meta name="author" content="Yifei Lin" />
     <script src="libs/header-attrs-2.16/header-attrs.js"></script>
+    <link href="libs/panelset-0.2.6/panelset.css" rel="stylesheet" />
+    <script src="libs/panelset-0.2.6/panelset.js"></script>
     <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
     <link rel="stylesheet" href="custom.css" type="text/css" />
   </head>
@@ -25,7 +27,7 @@ class: center, middle, inverse, title-slide
 ### Centre for Advanced Spatial Analysis, UCL
 ]
 .date[
-### 2023/01/18 (updated: 2023-01-24)
+### 2023/01/18 (updated: 2023-03-19)
 ]
 
 ---
@@ -44,11 +46,11 @@ Technology
 ## General description 
 **LiDAR**: an acronym of "**Li**ght **D**etection, **A**nd **R**anging"
 .pull-left[
-* A method for determining ranges by targeting an object or a surface with a laser and measuring the time for the reflected light to return to the receiver ([Shan and Toth, 2018](#bib-shan2018)). 
+* A method for determining ranges by targeting an object or a surface with a laser and measuring the time for the reflected light to return to the receiver &lt;a name=cite-shan2018&gt;&lt;/a&gt;([Shan and Toth, 2018](#bib-shan2018)). 
 
 * Use ultraviolet, visible, or near infrared light
 
-* Advantages: target a **wide range of materials** ([Cracknell, 2007](#bib-cracknell2007)) with **high resolution**
+* Advantages: target a **wide range of materials** &lt;a name=cite-cracknell2007&gt;&lt;/a&gt;([Cracknell, 2007](#bib-cracknell2007)) with **high resolution**
 
 ]
 
@@ -112,20 +114,64 @@ Example
 ---
 ## Example of Airborne LiDAR applications
 
-* Urban morphology and green analysis
-  * [Yu, Liu, Wu et al. (2010)](#bib-yu2010) applied airborne LiDAR technology on building density information.
-  * [Hecht, Meinel, and Buchroithner (2008)](#bib-hecht2008) estimated the urban green volume using single pulse LiDAR-derived nDSM.
-  
-* Urban flood risk modeling
-  * [Tsubaki and Fujita (2010)](#bib-tsubaki2010) generated unstructured grid representing the urban landscape and estimated the water depth by flood simulations.
+
+
+.panelset[
+
+.panel[.panel-name[Urban morphology]
+
+&lt;a name=cite-yu2010&gt;&lt;/a&gt;[Yu, Liu, Wu, Hu, and Zhang (2010)](#bib-yu2010) found an approach to derive Building Coverage Ratio (BCR), Floor Area Ratio (FAR), and other building density indicators numerically and automatically from high-resolution airborne LiDAR data at different spatial scales.
+
 .pull-left[
-&lt;img src="img/building_density.png" width="88%" style="display: block; margin: auto;" /&gt;
+* **Method**
+&lt;img src="img/building_workflow.png" width="80%" style="display: block; margin: auto;" /&gt;
+.small[Workflow for automated building density estimation. Source: [Yu, Liu, Wu et al. (2010)](#bib-yu2010)]
+]
+
+.pull-right[
+* **Result**
+&lt;img src="img/building_density.png" width="110%" style="display: block; margin: auto;" /&gt;
 .small[Extracted building objects and its coverage ratio map for Houston. Source: [Yu, Liu, Wu et al. (2010)](#bib-yu2010)]
 ]
+]
+
+
+.panel[.panel-name[Urban green analysis]
+
+.pull-left[
+&lt;a name=cite-hecht2008&gt;&lt;/a&gt;[Hecht, Meinel, and Buchroithner (2008)](#bib-hecht2008) estimated the urban green volume using single pulse LiDAR-derived nDSM.
+
+* **Result**
+&lt;img src="img/green_result.png" width="72%" style="display: block; margin: auto auto auto 0;" /&gt;
+.small[Result of urban green volume. Source: [Hecht, Meinel, and Buchroithner (2008)](#bib-hecht2008)]
+]
+
 .pull-right[
-&lt;img src="img/flood_model.png" width="90%" style="display: block; margin: auto;" /&gt;
+
+* **Method**
+&lt;img src="img/green_workflow.png" width="75%" style="display: block; margin: auto auto auto 0;" /&gt;
+.small[Workflow. Source: [Hecht, Meinel, and Buchroithner (2008)](#bib-hecht2008)]
+]
+]
+
+.panel[.panel-name[Urban flood risk modeling]
+
+.pull-left[
+&lt;a name=cite-tsubaki2010&gt;&lt;/a&gt;[Tsubaki and Fujita (2010)](#bib-tsubaki2010) generated unstructured grid representing the urban landscape and estimated the water depth by flood simulations.
+* **Result**
+&lt;img src="img/flood_model.png" width="100%" style="display: block; margin: auto auto auto 0;" /&gt;
 .small[Digital surface model and elevation model. Source: [Tsubaki and Fujita (2010)](#bib-tsubaki2010)]
 ]
+
+.pull-right[
+* **Method**
+&lt;img src="img/flood_workflow.png" width="90%" style="display: block; margin: auto auto auto 0;" /&gt;
+.small[Workflow. Source: [Tsubaki and Fujita (2010)](#bib-tsubaki2010)]
+]
+
+]
+]
+
 ---
 class: inverse, center, middle
 # Reflection
@@ -137,33 +183,37 @@ Future investigation
 ## Reflection
 
 ### LiDAR's Role on planning
-* Extraction building information, such as density, heights, volumes, boundary, coverage ratio, and floor area ratio, can be used to **estimate population**, which is helpful for strategy planning, urban design and policy analysis.
-* Assessment of potential flood can be applied in **infrastructure planning** and the construction of **spong city**.
-* Estimation of urban green volume provides information for **ecologically orientated** city planning and environmentally sustainable development.
+* **Extraction building information**, such as density, heights, volumes, boundary, coverage ratio, and floor area ratio, can be used to **estimate population**, which is helpful for strategy planning, urban design and policy analysis.
+* **Assessment of potential flood** can be applied in **infrastructure planning** and the construction of **spong city**.
+* **Estimation of urban green volume** provides information for **ecologically orientated** city planning and environmentally sustainable development.
 
 ### Future investigation
 * Fine-scale land use information derived
 * Air ventilation assessment (AVA) of urban environment *(especially in high rise built-up urban area)*
 ---
 # Reference
-&lt;a name=bib-cracknell2007&gt;&lt;/a&gt;[Cracknell, A. P.](#cite-cracknell2007) (2007). _Introduction to
-Remote Sensing_. CRC Press. ISBN: 978-1-4200-0897-5.
+&lt;a name=bib-cracknell2007&gt;&lt;/a&gt;[Cracknell, A. P.](#cite-cracknell2007)
+(2007). _Introduction to Remote Sensing_. CRC Press. ISBN:
+978-1-4200-0897-5.
 
-&lt;a name=bib-hecht2008&gt;&lt;/a&gt;[Hecht, R., G. Meinel, and M. F. Buchroithner](#cite-hecht2008) (2008).
-"Estimation of Urban Green Volume Based on Single-Pulse LiDAR Data". In: _IEEE Transactions on
+&lt;a name=bib-hecht2008&gt;&lt;/a&gt;[Hecht, R., G. Meinel, and M. F.
+Buchroithner](#cite-hecht2008) (2008). "Estimation of Urban Green
+Volume Based on Single-Pulse LiDAR Data". In: _IEEE Transactions on
 Geoscience and Remote Sensing_ 46.11, pp. 3832-3840.
 
-&lt;a name=bib-shan2018&gt;&lt;/a&gt;[Shan, J. and C. K. Toth](#cite-shan2018) (2018). _Topographic Laser
-Ranging and Scanning: Principles and Processing, Second Edition_. CRC Press. ISBN:
-978-1-4987-7228-0.
+&lt;a name=bib-shan2018&gt;&lt;/a&gt;[Shan, J. and C. K. Toth](#cite-shan2018)
+(2018). _Topographic Laser Ranging and Scanning: Principles and
+Processing, Second Edition_. CRC Press. ISBN: 978-1-4987-7228-0.
 
-&lt;a name=bib-tsubaki2010&gt;&lt;/a&gt;[Tsubaki, R. and I. Fujita](#cite-tsubaki2010) (2010). "Unstructured
-Grid Generation Using LiDAR Data for Urban Flood Inundation Modelling". In: _Hydrological
+&lt;a name=bib-tsubaki2010&gt;&lt;/a&gt;[Tsubaki, R. and I.
+Fujita](#cite-tsubaki2010) (2010). "Unstructured Grid Generation Using
+LiDAR Data for Urban Flood Inundation Modelling". In: _Hydrological
 Processes_ 24.11, pp. 1404-1420.
 
-&lt;a name=bib-yu2010&gt;&lt;/a&gt;[Yu, B., H. Liu, J. Wu, et al.](#cite-yu2010) (2010). "Automated Derivation
-of Urban Building Density Information Using Airborne LiDAR Data and Object-Based Method". In:
-_Landscape and Urban Planning_. Climate Change and Spatial Planning 98.3, pp. 210-219.
+&lt;a name=bib-yu2010&gt;&lt;/a&gt;[Yu, B., H. Liu, J. Wu, et al.](#cite-yu2010)
+(2010). "Automated Derivation of Urban Building Density Information
+Using Airborne LiDAR Data and Object-Based Method". In: _Landscape and
+Urban Planning_. Climate Change and Spatial Planning 98.3, pp. 210-219.
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
